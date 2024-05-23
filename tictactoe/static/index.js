@@ -2,68 +2,65 @@ import { Board } from "./board.js";
 
 const app = document.getElementById("app");
 
-const createSquare = () => {
+function createSquare() {
     const square = document.createElement("div");
     square.className = "square";
     app.appendChild(square)
     return square
 }
 
-const createMarker = () => {
+function createMarker() {
     const marker = document.createElement("p");
     marker.className = "marker";
     return marker
 }
 
-const resetBoard = (board) => {
-    const squares = document.querySelectorAll(".square")
-
-    squares.forEach(square => {
-        square.innerHTML = ""
-        square.classList.remove("clicked")
-    })
-
-    return console.log(board.reset())
-}
-
-const makeMove = (board, cell, square, player) => {
+function makeMove(board, cell, square, player) {
     if (player === "X" && square.firstChild === null) {
         const x = createMarker()
         x.textContent = "X"
         square.appendChild(x)
-        board.makeMove(cell, player)
-
     } else if (player === "O" && square.firstChild === null) {
         const circle = createMarker()
         circle.textContent = "O"
         square.appendChild(circle)
-        board.makeMove(cell, player)
     }
 
+    board.makeMove(cell, player)
 }
 
-const startGame = () => {
+function resetBoard(board) {
+    const squares = document.querySelectorAll(".square")
+
+    for (const square of squares) {
+        square.innerHTML = ""
+        square.classList.remove("clicked")
+    }
+
+    return board.reset()
+}
+
+function startGame() {
     const board = new Board()
-    let player = "X"
+    let currentPlayer = "X"
 
     for (const cell in board.cells) {
         const square = createSquare()
 
         square.addEventListener("click", (e) => {
-            if (player === "X" && !square.classList.contains("clicked")) {
-                makeMove(board, cell, square, player)
+            if (currentPlayer === "X" && !square.classList.contains("clicked")) {
+                makeMove(board, cell, square, currentPlayer)
                 square.classList.add("clicked")
-                player = "O"
-            } else if (player === "O" && !square.classList.contains("clicked")) {
-                makeMove(board, cell, square, player)
+                currentPlayer = "O"
+
+            } else if (currentPlayer === "O" && !square.classList.contains("clicked")) {
+                makeMove(board, cell, square, currentPlayer)
                 square.classList.add("clicked")
-                player = "X"
+                currentPlayer = "X"
             }
 
             if (board.checkWinner()) {
-                setTimeout(() => {
-                    window.alert("We have a winner!")
-                }, 500)
+                window.alert("We have a winner!")
 
                 setTimeout(() => {
                     return resetBoard(board)
@@ -71,9 +68,7 @@ const startGame = () => {
             }
 
             if (board.isFull() && board.checkWinner() === null) {
-                setTimeout(() => {
-                    window.alert("This is a draw!")
-                }, 500)
+                window.alert("This is a draw!")
 
                 setTimeout(() => {
                     return resetBoard(board)
