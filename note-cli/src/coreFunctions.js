@@ -8,13 +8,17 @@ export const createMessage = () => {
     });
 
     rl.question('Enter the title: ', (title) => {
-        if (fs.existsSync(`./messages/${title}.txt`)) {
+        if (fs.existsSync(`./messages/${title.trim()}.txt`)) {
             rl.close()
 
             console.log('File already exists!');
         } else {
+            if (!fs.existsSync('./messages')) {
+                fs.mkdirSync('./messages');
+            }
+
             rl.question('Enter the content: ', (content) => {
-                fs.writeFile(`./messages/${title}.txt`, content, (err) => {
+                fs.writeFile(`./messages/${title.trim()}.txt`, content, (err) => {
                     if (err) {
                         console.log(err);
                     } else {
@@ -27,22 +31,13 @@ export const createMessage = () => {
     });
 }
 
-export const deleteMessages = () => {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-    rl.question('Enter the title of the message you want to delete: ', (title) => {
-        fs.unlink(`./messages/${title}.txt`, (err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('File deleted successfully');
-            }
-        });
-
-        rl.close();
+export const deleteMessages = (title) => {
+    fs.unlink(`./messages/${title}.txt`, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('File deleted successfully');
+        }
     });
 }
 
