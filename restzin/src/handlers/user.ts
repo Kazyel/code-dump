@@ -51,7 +51,7 @@ export const signInUser = async (req: Request, res: Response) => {
   const isValidPassword = await verifyPassword(password, user.password);
 
   if (!isValidPassword) {
-    res.status(401).json({ message: "Invalid password." });
+    return res.status(401).json({ message: "Invalid password." });
   }
 
   const token = createJWT(user);
