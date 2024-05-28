@@ -14,6 +14,16 @@ export const createNewUser = async (req: Request, res: Response) => {
   try {
     const hashedPassword = await hashPassword(password);
 
+    const userExists = await prisma.user.findUnique({
+      where: {
+        username,
+      },
+    });
+
+    if (userExists) {
+      return res.status(400).json({ message: "User already exists." });
+    }
+
     const user = await prisma.user.create({
       data: {
         username: username,
@@ -38,22 +48,26 @@ export const signInUser = async (req: Request, res: Response) => {
       .json({ message: "Username and password are required." });
   }
 
-  const user = await prisma.user.findUnique({
-    where: {
-      username,
-    },
-  });
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        username,
+      },
+    });
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found." });
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    const isValidPassword = await verifyPassword(password, user.password);
+
+    if (!isValidPassword) {
+      return res.status(401).json({ message: "Invalid password." });
+    }
+
+    const token = createJWT(user);
+    res.json({ token });
+  } catch (error) {
+    return res.status(500).json({ message: "An error occurred." });
   }
-
-  const isValidPassword = await verifyPassword(password, user.password);
-
-  if (!isValidPassword) {
-    return res.status(401).json({ message: "Invalid password." });
-  }
-
-  const token = createJWT(user);
-  res.json({ token });
 };
