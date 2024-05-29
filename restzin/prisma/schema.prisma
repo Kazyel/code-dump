@@ -17,13 +17,14 @@ model User {
 
 model Product {
   id        String   @id @default(uuid())
-  name      String   @db.VarChar(255)
-  price     Float
   createdAt DateTime @default(now())
 
+  name      String   @db.VarChar(255)
   userId    String
   belongsTo User     @relation(fields: [userId], references: [id])
   updates   Update[]
+
+  @@unique([id, userId])
 }
 
 enum Update_Status {

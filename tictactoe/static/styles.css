@@ -32,4 +32,5 @@ body {
 
 .marker {
   font-size: 6rem;
+  font-family: "Ubuntu Sans Mono", monospace;
 }

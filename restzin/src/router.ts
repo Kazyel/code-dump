@@ -1,58 +1,64 @@
 import { Router } from "express";
 import { Request, Response } from "express";
-import { body, validationResult } from "express-validator";
-import { handleInputValidation } from "./handlers/middlewares";
+import { body } from "express-validator";
+import { handleInputValidation } from "./modules/middlewares";
+import {
+  createProduct,
+  deleteProduct,
+  getOneProduct,
+  getProducts,
+  updateProduct,
+} from "./handlers/product";
 
 const router = Router();
 
 /*
   Products Route
 */
-router.get("/product", (req: Request, res: Response) => {});
-
-router.get("/product/:id", (req: Request, res: Response) => {});
-
-router.put(
-  "/product/:id",
-  [body("name").isString(), body("price").isNumeric(), handleInputValidation],
-  (req: Request, res: Response) => {}
-);
+router.get("/product", getProducts);
+router.get("/product/:id", getOneProduct);
 
 router.post(
   "/product",
-  [body("name").isString(), body("price").isNumeric(), handleInputValidation],
-  (req: Request, res: Response) => {}
+  body("name").isString(),
+  handleInputValidation,
+  createProduct
 );
 
-router.delete("/product/:id", (req: Request, res: Response) => {});
+router.put(
+  "/product/:id",
+  body("name").isString(),
+  handleInputValidation,
+  updateProduct
+);
+
+router.delete("/product/:id", deleteProduct);
 
 /* 
   Update Route
 */
 router.get("/update", (req: Request, res: Response) => {});
-
 router.get("/update/:id", (req: Request, res: Response) => {});
 
-router.put(
-  "/update/:id",
+router.post(
+  "/update",
   [
-    body("title").isString(),
-    body("body").isString(),
-    body("version").optional().isString(),
-    body("asset").optional().isString(),
-    body("updatedAt").isDate(),
+    body("title").exists(),
+    body("body").exists().isString(),
+    body("asset").optional(),
     handleInputValidation,
   ],
   (req: Request, res: Response) => {}
 );
 
-router.post(
-  "/update",
+router.put(
+  "/update/:id",
   [
-    body("title").isString(),
-    body("body").isString(),
-    body("version").optional().isString(),
-    body("asset").optional().isString(),
+    body("title").optional(),
+    body("body").optional(),
+    body("status").isIn(["IN_PROGRESS", "SHIPPED", "DEPRECATED"]).optional(),
+    body("version").optional(),
+    body("asset").optional(),
     handleInputValidation,
   ],
   (req: Request, res: Response) => {}
@@ -65,26 +71,24 @@ router.delete("/update/:id", (req: Request, res: Response) => {});
 */
 
 router.get("/update-point", (req: Request, res: Response) => {});
-
 router.get("/update-point/:id", (req: Request, res: Response) => {});
 
-router.put(
-  "/update-point/:id",
+router.post(
+  "/update-point",
   [
-    body("title").isString(),
-    body("body").isString(),
-    body("updatedAt").isDate(),
+    body("title").exists().isString(),
+    body("body").exists().isString(),
+    body("updateId").exists().isString(),
     handleInputValidation,
   ],
   (req: Request, res: Response) => {}
 );
 
-router.post(
-  "/update-point",
+router.put(
+  "/update-point/:id",
   [
-    body("title").isString(),
-    body("body").isString(),
-    body("updatedAt").isDate(),
+    body("title").optional().isString(),
+    body("body").optional().isString(),
     handleInputValidation,
   ],
   (req: Request, res: Response) => {}
