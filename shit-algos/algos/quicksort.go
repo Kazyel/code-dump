@@ -1,4 +1,5 @@
 package algos
+
 func QuickSort(arr []int) []int {
     if len(arr) <= 1 {
         return arr
@@ -20,3 +21,5 @@ func QuickSort(arr []int) []int {
 
     return append(append(left, pivot), right...)
 }
+
+
