@@ -32,7 +32,7 @@ code {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
-  gap: 2rem 0;
+  gap: 2rem;
 }
 
 .second-grid {
@@ -40,7 +40,7 @@ code {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   justify-items: center;
-  gap: 2rem 0;
+  gap: 2rem;
 }
 
 .col-2 {
@@ -67,8 +67,7 @@ code {
   Grid Item 
 */
 .grid-item {
-  width: 400px;
-  height: 300px;
+  width: 100%;
   border-radius: 0.4rem;
   object-fit: cover;
   object-position: center;
@@ -84,7 +83,8 @@ code {
   overflow: hidden;
   border-radius: 0.4rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  height: 300px;
+  max-width: 600px;
+  height: 400px;
 }
 
 .over-hidden figcaption {
