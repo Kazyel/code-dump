@@ -62,15 +62,19 @@ code {
 
 .over-hidden {
   overflow: hidden;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  height: 300px;
 }
 
 .over-hidden p {
   color: white;
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
   left: 10px;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
 }
 
 .relative {
