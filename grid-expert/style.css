@@ -67,7 +67,7 @@ code {
   height: 300px;
 }
 
-.over-hidden p {
+.over-hidden figcaption {
   color: white;
   position: absolute;
   bottom: 15px;
