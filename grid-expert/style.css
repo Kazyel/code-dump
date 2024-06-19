@@ -35,6 +35,27 @@ code {
   gap: 2rem 0;
 }
 
+.second-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  gap: 2rem 0;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-4 {
+  grid-column: 3/3;
+  grid-row: 3/3;
+}
+
 .flex {
   display: flex;
   flex-direction: column;
