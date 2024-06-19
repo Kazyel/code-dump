@@ -2,6 +2,7 @@ import { Router } from "express";
 import { Request, Response } from "express";
 import { body } from "express-validator";
 import { handleInputValidation } from "./modules/middlewares";
+
 import {
   createProduct,
   deleteProduct,
@@ -9,6 +10,7 @@ import {
   getProducts,
   updateProduct,
 } from "./handlers/product";
+
 import {
   createUpdate,
   deleteUpdate,
@@ -16,7 +18,6 @@ import {
   getUpdates,
   updateUpdate,
 } from "./handlers/update";
-import { get } from "http";
 
 const router = Router();
 
