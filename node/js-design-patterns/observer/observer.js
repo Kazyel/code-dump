@@ -1,18 +1,18 @@
 let observers = [];
 
-const observer = ({
+const observer = {
     add(observer) {
         observers.push(observer);
     },
 
     remove(observer) {
-        observers = observers.filter(o => o !== observer);
+        observers = observers.filter((o) => o !== observer);
     },
 
     notify(data) {
-        observers.forEach(observer => observer(data));
-    }
-});
+        observers.forEach((observer) => observer(data));
+    },
+};
 
 const notifyGameOver = (data) => {
     if (data === undefined) return null;
@@ -30,7 +30,10 @@ const notifyGameWon = (data) => {
     }
 
     if (data.state === "Game Won") {
-        setTimeout(() => console.log(`\nCongratulations! ${data.winner} wins!`), 1000);
+        setTimeout(
+            () => console.log(`\nCongratulations! ${data.winner} wins!`),
+            1000
+        );
     }
 };
 
@@ -42,13 +45,16 @@ const notifySpectator = (data) => {
     }
 
     if (data.state === "Game Won") {
-        setTimeout(() => console.log(`[Spectating] Congratulations! ${data.winner} wins!`), 1000);
+        setTimeout(
+            () => console.log(`[Spectating] Congratulations! ${data.winner} wins!`),
+            1000
+        );
     }
 
     if (data.state === "Game Over") {
         return console.log(`[Spectating] Game Over!`);
     }
-}
+};
 
 observer.add(notifyGameOver);
 observer.add(notifyGameWon);

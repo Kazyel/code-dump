@@ -2,341 +2,341 @@
   Overall Styles
 */
 html {
-  scroll-behavior: smooth;
-  overscroll-behavior: none;
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
 }
 
 body {
-  width: 100%;
-  height: 100vh;
-  font-family: "Noto Sans", sans-serif;
+    width: 100%;
+    height: 100vh;
+    font-family: "Noto Sans", sans-serif;
 }
 
 strong {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 code {
-  font-family: "Noto Sans Mono", monospace;
-  padding: 6px;
-  font-size: 0.9rem;
-  border-radius: 0.4rem;
-  font-weight: 600;
+    font-family: "Noto Sans Mono", monospace;
+    padding: 6px;
+    font-size: 0.9rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
 }
 
 /* 
   Containers 
 */
 .first-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  justify-items: center;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    gap: 2rem;
 }
 
 .second-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2rem;
 }
 
 .third-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  gap: 2rem;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    justify-items: center;
 }
 
 .fourth-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  justify-items: center;
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    gap: 2rem;
 }
 
 .col-2 {
-  grid-column: span 2;
+    grid-column: span 2;
 }
 
 .col-3 {
-  grid-column: span 3;
+    grid-column: span 3;
 }
 
 .col-4 {
-  grid-column: 3/3;
-  grid-row: 3/3;
+    grid-column: 3/3;
+    grid-row: 3/3;
 }
 
 .flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 
   Grid Item 
 */
 .grid-item {
-  width: 100%;
-  border-radius: 0.4rem;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s;
+    width: 100%;
+    border-radius: 0.4rem;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s;
 }
 
 .grid-item:hover {
-  transform: scale(1.05);
-  transition: transform 0.5s;
+    transform: scale(1.05);
+    transition: transform 0.5s;
 }
 
 .over-hidden {
-  overflow: hidden;
-  border-radius: 0.4rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  max-width: 600px;
-  height: 300px;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    max-width: 600px;
+    height: 300px;
 }
 
 .over-hidden figcaption {
-  color: white;
-  position: absolute;
-  bottom: 15px;
-  left: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
 }
 
 .relative {
-  position: relative;
+    position: relative;
 }
 
 /* 
   Main 
 */
 .main {
-  height: 350px;
-  width: 100%;
-  background-color: white;
-  background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23000000' fill-opacity='0.0275'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    height: 350px;
+    width: 100%;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23000000' fill-opacity='0.0275'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .main-title {
-  font-size: 3rem;
-  font-weight: 900;
-  padding: 2rem;
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 2rem;
 }
 
 .main-subtitle {
-  font-size: 1rem;
-  font-weight: 400;
-  color: gray;
-  margin-bottom: 1.5rem;
-  margin-bottom: 3rem;
-  max-width: 500px;
-  text-align: center;
-  line-height: 1.5em;
-  border-bottom: 1px solid black;
-  padding-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: gray;
+    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    text-align: center;
+    line-height: 1.5em;
+    border-bottom: 1px solid black;
+    padding-bottom: 2rem;
 }
 
 .main-subtitle a {
-  color: rebeccapurple;
-  font-weight: 600;
+    color: rebeccapurple;
+    font-weight: 600;
 }
 
 .main-subtitle strong {
-  color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /* 
   Navbar 
 */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-item {
-  margin: 0 1rem;
-  font-size: 1.15rem;
-  font-weight: 900;
-  margin-bottom: 3rem;
-  color: rebeccapurple;
+    margin: 0 1rem;
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    color: rebeccapurple;
 }
 
 .nav-item a {
-  cursor: pointer;
-  text-decoration: none;
-  color: rebeccapurple;
+    cursor: pointer;
+    text-decoration: none;
+    color: rebeccapurple;
 }
 
 .nav-item a:hover {
-  color: darkorchid;
-  text-decoration: underline;
+    color: darkorchid;
+    text-decoration: underline;
 }
 
 /* 
   First Lesson 
 */
 #first-lesson {
-  background-color: #242424;
-  padding: 0 4rem 4rem 4rem;
+    background-color: #242424;
+    padding: 0 4rem 4rem 4rem;
 }
 
 #first-lesson code {
-  background-color: #353535;
+    background-color: #353535;
 }
 
 .basic-description {
-  padding: 4rem 0;
-  gap: 1.5rem;
+    padding: 4rem 0;
+    gap: 1.5rem;
 }
 
 .basic-title {
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    color: white;
 }
 
 .basic-subtitle {
-  color: #bbb;
+    color: #bbb;
 }
 
 /* 
   Second Lesson 
 */
 #second-lesson {
-  background-color: rgba(0, 95, 180, 0.75);
-  padding: 0 4rem 4rem 4rem;
-  color: white;
+    background-color: rgba(0, 95, 180, 0.75);
+    padding: 0 4rem 4rem 4rem;
+    color: white;
 }
 
 #second-lesson code {
-  background-color: rgba(0, 95, 180, 0.35);
-  color: white;
+    background-color: rgba(0, 95, 180, 0.35);
+    color: white;
 }
 
 .span-description {
-  padding: 4rem 0;
-  gap: 1.5rem;
+    padding: 4rem 0;
+    gap: 1.5rem;
 }
 
 .span-title {
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    color: white;
 }
 
 .span-subtitle {
-  color: #eff9ff;
+    color: #eff9ff;
 }
 
 /*
   Third Lesson
 */
 #third-lesson {
-  background-color: rgba(205, 63, 2, 0.75);
-  padding: 0 4rem 4rem 4rem;
-  color: white;
+    background-color: rgba(205, 63, 2, 0.75);
+    padding: 0 4rem 4rem 4rem;
+    color: white;
 }
 
 #third-lesson code {
-  background-color: rgba(215, 83, 2, 0.938);
-  color: white;
+    background-color: rgba(215, 83, 2, 0.938);
+    color: white;
 }
 
 .overlap-description {
-  padding: 4rem 0;
-  gap: 1.5rem;
+    padding: 4rem 0;
+    gap: 1.5rem;
 }
 
 .overlap-title {
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    color: white;
 }
 
 .overlap-subtitle {
-  color: #ffecd6;
+    color: #ffecd6;
 }
 
 .figure-grid {
-  display: grid;
-  grid-template-rows: 70% 30%;
-  grid-template-columns: 1fr;
-  max-width: 800px;
-  overflow: hidden;
-  border-radius: 0.4rem;
+    display: grid;
+    grid-template-rows: 70% 30%;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 0.4rem;
 }
 
 .figure-image {
-  object-fit: cover;
-  object-position: center;
-  grid-row: 1/3;
-  grid-column: 1/2;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s;
+    object-fit: cover;
+    object-position: center;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
 }
 
 .figure-image:hover {
-  transform: scale(1.05);
-  transition: transform 0.5s;
+    transform: scale(1.05);
+    transition: transform 0.5s;
 }
 
 .figure-caption {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  padding: 1rem;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.5em;
-  color: white;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(0, 0, 0, 0.25);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.258);
-  z-index: 10;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.258);
+    z-index: 10;
 }
 
 /*
   Fourth Lesson
 */
 #fourth-lesson {
-  background-color: rgb(92, 0, 185);
-  padding: 0 4rem 4rem 4rem;
-  color: white;
+    background-color: rgb(92, 0, 185);
+    padding: 0 4rem 4rem 4rem;
+    color: white;
 }
 
 #fourth-lesson code {
-  background-color: rgb(121, 3, 224);
-  color: white;
+    background-color: rgb(121, 3, 224);
+    color: white;
 }
 
 .subgrid-description {
-  padding: 4rem 0;
-  gap: 1.5rem;
+    padding: 4rem 0;
+    gap: 1.5rem;
 }
 
 .subgrid-title {
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  color: white;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    color: white;
 }
 
 .subgrid-subtitle {
-  color: #f0e1ff;
+    color: #f0e1ff;
 }
 
 /* 
@@ -344,26 +344,26 @@ code {
 */
 
 footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem 0;
-  text-align: center;
-  background-color: white;
-  background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23000000' fill-opacity='0.0275'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    text-align: center;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23000000' fill-opacity='0.0275'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 footer h2 {
-  color: black;
-  font-size: 1rem;
-  font-weight: 800;
-  border-right: 2px solid black;
-  padding-right: 1rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 800;
+    border-right: 2px solid black;
+    padding-right: 1rem;
 }
 
 #github {
-  width: 24px;
-  aspect-ratio: 1/1;
+    width: 24px;
+    aspect-ratio: 1/1;
 }
