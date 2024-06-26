@@ -275,6 +275,9 @@ code {
   display: grid;
   grid-template-rows: 70% 30%;
   grid-template-columns: 1fr;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 0.4rem;
 }
 
 .figure-image {
@@ -284,7 +287,12 @@ code {
   grid-column: 1/2;
   width: 100%;
   height: 100%;
-  border-radius: 0.4rem;
+  transition: transform 0.5s;
+}
+
+.figure-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s;
 }
 
 .figure-caption {
@@ -298,6 +306,7 @@ code {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   background-color: rgba(0, 0, 0, 0.25);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.258);
+  z-index: 10;
 }
 
 /*
