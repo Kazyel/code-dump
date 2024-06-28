@@ -1,5 +1,5 @@
 import "./App.css";
-import UseReducerExample from "./components/UserReducerExample";
+import UseReducerExample from "./components/UseReducerExample";
 import { CounterState, ListState, NameState } from "./components/SimpleStates";
 import ReactLogo from "./assets/react.svg";
 
