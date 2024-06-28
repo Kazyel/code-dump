@@ -1,12 +1,12 @@
 import { CounterState, NameState } from "./components/SimpleStates";
 import UseReducerExample from "./components/UseReducerExample";
 import UseRefExample from "./components/UseRefExample";
-import Pokemons from "./components/Pokemons";
 import CurrentTheme from "./components/CurrentTheme";
+import ThemeProvider from "./context/genericContext";
+import List from "./components/List";
+import Title from "./components/Title";
 
 import "./App.css";
-import ThemeProvider from "./context/genericContext";
-import Title from "./components/Title";
 
 function App() {
     return (
@@ -17,7 +17,7 @@ function App() {
                     <CurrentTheme />
                     <CounterState />
                     <NameState />
-                    <Pokemons />
+                    <List />
                     <UseReducerExample />
                     <UseRefExample />
                 </div>

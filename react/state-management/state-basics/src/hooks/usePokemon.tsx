@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export const usePokemon = () => {
-    const [pokemon, setPokemon] = useState<string[]>([]);
+export const useList = () => {
+    const [list, setList] = useState<string[]>([]);
 
-    const handlePokemonChange = (pokemon: string) => {
-        setPokemon((pokemons) => [pokemon, ...pokemons]);
+    const handleListChange = (list: string) => {
+        setList((items) => [list, ...items]);
     };
 
-    return { pokemon, handlePokemonChange };
+    return { list, handleListChange };
 };
 
-export default usePokemon;
+export default useList;

@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import usePokemon from "../hooks/usePokemon";
 
-const Pokemons = () => {
-    const { pokemon, handlePokemonChange } = usePokemon();
+const List = () => {
+    const { list, handleListChange } = usePokemon();
     const inputRef = useRef<HTMLInputElement>(null);
     const handleAddPokemon = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
-            if (!pokemon.includes(inputRef.current!.value)) {
-                handlePokemonChange(inputRef.current!.value);
+            if (!list.includes(inputRef.current!.value)) {
+                handleListChange(inputRef.current!.value);
                 inputRef.current!.value = "";
             }
         }
@@ -22,12 +22,12 @@ const Pokemons = () => {
                 }}
                 ref={inputRef}
                 type="text"
-                placeholder="Pokemon"
+                placeholder="Add any item..."
             />
 
             <ul className="item-list">
-                {pokemon.map((pokemon, index) => (
-                    <li key={index}>{pokemon}</li>
+                {list.map((item, index) => (
+                    <li key={index}>{item}</li>
                 ))}
             </ul>
 
@@ -36,4 +36,4 @@ const Pokemons = () => {
     );
 };
 
-export default Pokemons;
+export default List;
