@@ -1,7 +1,8 @@
-import useTheme from "../hooks/useTheme";
+import { useContext } from "react";
+import { ThemeContext } from "../context/genericContext";
 
 const CurrentTheme = () => {
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useContext(ThemeContext);
 
     const handleChangeTheme = () => {
         if (theme === "dark") {

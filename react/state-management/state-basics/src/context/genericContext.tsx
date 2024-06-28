@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const ThemeContext = createContext<{
+export const ThemeContext = createContext<{
     theme: string;
     setTheme: React.Dispatch<React.SetStateAction<string>>;
 }>({
@@ -8,4 +8,13 @@ const ThemeContext = createContext<{
     setTheme: () => {},
 });
 
-export default ThemeContext;
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+    const [theme, setTheme] = useState("light");
+    const value = { theme, setTheme };
+
+    return (
+        <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    );
+};
+
+export default ThemeProvider;
