@@ -28,38 +28,3 @@ export function NameState() {
         </div>
     );
 }
-
-export function ListState() {
-    const [list, setList] = useState<string[]>([]);
-    const [nameState, setNameState] = useState("");
-
-    const addItem = (name: string) => {
-        if (!list.includes(name) && name.length > 0) {
-            setList([...list, name]);
-            setNameState("");
-        }
-    };
-
-    return (
-        <div className="card">
-            <input
-                type="text"
-                value={nameState}
-                onChange={(e) => setNameState(e.target.value)}
-                onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                        addItem(nameState);
-                    }
-                }}
-            />
-            <button onClick={() => addItem(nameState)}>Add Item</button>
-            <div className="item-list">
-                <ul>
-                    {list.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-        </div>
-    );
-}

@@ -4,7 +4,6 @@ import usePokemon from "../hooks/usePokemon";
 const Pokemons = () => {
     const { pokemon, handlePokemonChange } = usePokemon();
     const inputRef = useRef<HTMLInputElement>(null);
-
     const handleAddPokemon = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             if (!pokemon.includes(inputRef.current!.value)) {
