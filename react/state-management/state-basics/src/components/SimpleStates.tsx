@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function CounterState() {
     const [count, setCount] = useState(0);
     const addCount = () => setCount(count + 1);
+
+    useEffect(() => {
+        console.log("Count state updated, count is now", count);
+    }, [count]);
 
     return (
         <div className="card">
