@@ -17,7 +17,7 @@ const List = () => {
         <div className="card">
             <input
                 onChange={(e) => (inputRef.current!.value = e.target.value)}
-                onKeyDownCapture={(e) => {
+                onKeyDown={(e) => {
                     handleAddPokemon(e);
                 }}
                 ref={inputRef}
