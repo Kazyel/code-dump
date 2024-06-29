@@ -13,13 +13,15 @@ const CurrentTheme = () => {
     };
 
     const bgStyle = {
-        backgroundColor: theme === "dark" ? "#1a1a1a" : "#ffffff",
-        color: theme === "dark" ? "#ffffff" : "#1a1a1a",
+        backgroundColor: theme === "dark" ? "#1a1a1a" : "#ffffffee",
+        color: theme === "dark" ? "#ffffffee" : "#1a1a1a",
+        transition: "all 0.25s",
     };
 
     const buttonStyle = {
-        backgroundColor: theme === "dark" ? "#ffffff" : "#1a1a1a",
-        color: theme === "dark" ? "#1a1a1a" : "#ffffff",
+        backgroundColor: theme === "dark" ? "#ffffffee" : "#1a1a1a",
+        color: theme === "dark" ? "#1a1a1a" : "#ffffffee",
+        transition: "all 0.25s",
     };
 
     return (

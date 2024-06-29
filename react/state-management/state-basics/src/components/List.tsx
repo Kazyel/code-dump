@@ -1,9 +1,10 @@
 import { useRef } from "react";
-import usePokemon from "../hooks/usePokemon";
+import useList from "../hooks/useList";
 
 const List = () => {
-    const { list, handleListChange } = usePokemon();
+    const { list, handleListChange } = useList();
     const inputRef = useRef<HTMLInputElement>(null);
+
     const handleAddPokemon = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
             if (!list.includes(inputRef.current!.value)) {
@@ -30,8 +31,6 @@ const List = () => {
                     <li key={index}>{item}</li>
                 ))}
             </ul>
-
-            <button>Add</button>
         </div>
     );
 };

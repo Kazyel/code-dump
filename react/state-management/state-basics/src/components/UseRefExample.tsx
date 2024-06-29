@@ -14,6 +14,7 @@ const UseRefExample = () => {
         const interval = setInterval(() => {
             setCount((count) => count + 1);
         }, 1000);
+
         return () => clearInterval(interval);
     }, []);
 
