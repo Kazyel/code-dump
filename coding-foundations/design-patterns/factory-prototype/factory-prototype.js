@@ -1,8 +1,6 @@
-/* 
-  It´s so dumb in javascript to create factory functions, not even really a pattern
-  We might even code it without knowing it´s a pattern 
+/**
+ * Factory and Prototype
  */
-
 const createMovie = (title, genre, year, description) => ({
   title,
   genre,
@@ -16,10 +14,11 @@ const movieInterstellar = createMovie(
   2014,
   "Interstellar is a science fiction film directed by Christopher Nolan in 2014."
 );
+
 console.log(movieInterstellar);
 
 /* 
-  The difference between factory and prototype is that prototype is better for creating objects with same methods and properties which is better for memory management, but factory is better for creating objects with different methods and properties 
+  The difference between factory and prototype is that prototype is better for creating objects with same methods and properties which is better for memory management, but factory is better for creating objects with different methods and properties.
 */
 
 class Book {
@@ -37,5 +36,4 @@ class Book {
 
 const createBook = (title, author) => new Book(title, author);
 const cleanCode = createBook("Clean Code", "Robert C. Martin");
-
 console.log(cleanCode.print());

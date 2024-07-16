@@ -1,3 +1,16 @@
+/**
+ *  Proxy
+ * 
+ *  Proxy is a design pattern that provides a surrogate or placeholder for another object 
+ *  to control access to it.
+ * 
+ *  In JavaScript, the proxy pattern is implemented using the Proxy class.
+ * 
+ *  The Proxy class has a get and set traps, which are functions that intercept property access operations.
+ *  The get trap is used to intercept property access operations and return a value, 
+ *  while the set trap is used to intercept property assignment operations and set a value.
+ */
+
 const movieInterstellar = {
     title: "Interstellar",
     genre: "Science Fiction",

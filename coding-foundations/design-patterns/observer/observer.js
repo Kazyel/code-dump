@@ -1,3 +1,19 @@
+/**
+ * Observer
+ * 
+ * Observer is a design pattern that allows a subject to notify its observers 
+ * without making any assumptions about who is observing it and what state it is in.
+ * 
+ * In JavaScript, the observer pattern is implemented using the Observer class.
+ * 
+ * The Observer class has two methods: addObserver and removeObserver. 
+ * The addObserver method adds an observer to the list of observers, 
+ * and the removeObserver method removes an observer from the list of observers.
+ * 
+ * The subject class has a method called notifyObservers, which notifies all the observers 
+ * by calling their update method.
+ */
+
 let observers = [];
 
 const observer = {
