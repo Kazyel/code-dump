@@ -94,7 +94,8 @@ const runOnce = (func) => {
 
   return (x) => {
     if (hasRun) {
-      return num;
+      console.log("Can only be called once.")
+      return
     }
 
     hasRun = true;
@@ -107,3 +108,4 @@ let multiplyByThreeOnce = runOnce(multiplyByThree);
 console.log(multiplyByThreeOnce(5));
 console.log(multiplyByThreeOnce(10));
 console.log(multiplyByThreeOnce(15));
+
