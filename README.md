@@ -1,4 +1,4 @@
-# Random (kinda shit) Codes
+# Here I dump every random, bad or good, study or for fun focused piece of codes. 
 
 This repo contain random pieces of code of a variety of topics and technologies (mostly JavaScript though).
 
