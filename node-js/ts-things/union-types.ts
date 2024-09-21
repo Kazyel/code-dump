@@ -33,7 +33,6 @@ type MessageObject = {
 };
 
 type Message = {
-    status: string;
     messageObject: MessageObject | Error;
 };
 
@@ -45,13 +44,35 @@ const returnMessage = (message: Message): MessageObject | Error => {
 };
 
 const newMessage = returnMessage({
-    status: "success",
     messageObject: { name: "Kazyel", message: "Hello!", year: 2022 },
 });
+
 const newMessage2 = returnMessage({
-    status: "error",
     messageObject: new Error("Something went wrong"),
 });
 
-console.log(newMessage);
-console.log(newMessage2);
+/*
+    Discriminated Unions
+
+    Discriminated unions are a type of union type that allow you to define a type that can be one of multiple types, but each type has a different value. This can be useful when you want to represent a value that can be one of several different types, but each type has a different value.
+*/
+
+type SuccessMessage = {
+    status: "success";
+    message: string;
+};
+
+type ErrorMessage = {
+    status: "error";
+    message: Error;
+};
+
+type MessageDiscriminated = SuccessMessage | ErrorMessage;
+
+const returnDiscriminatedMessage = (message: MessageDiscriminated): string => {
+    if (message.status === "success") {
+        return message.message;
+    }
+
+    return message.message.message;
+};
