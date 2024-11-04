@@ -11,65 +11,33 @@ let specialDate: SpecialDate = Object.assign(new Date(), {
     getDescription: () => "It's a special date!",
 });
 
-/* 
-  Interfaces
-
-  Interfaces are a way to define a contract for a type. They specify the properties and methods that a type must have, but they don't provide any implementation details. This can be useful when you want to define a contract for a type, but you don't want to implement the contract right away.
-*/
-
-interface SpecialDateInterface {
-    isSpecial: boolean;
-    getDescription: () => string;
-}
-
-let specialDate2: SpecialDateInterface = Object.assign(new Date(), {
-    isSpecial: true,
-    getDescription: () => "It's a special date!",
-});
-
 /*
-    Interface Inheritance
+  Type Indexing
 
-    Interface inheritance allows you to create a new interface that inherits from an existing interface. This can be useful when you want to create a new interface that has the same properties as an existing interface, but with additional properties or methods.
+  Type indexing allows you to access properties and methods of a type using a string. This can be useful when you want to access properties and methods of a type dynamically.
 */
 
-interface GameInterface {
+type GameStore = {
     name: string;
-    playGame: () => this;
-    exitGame: () => void;
-}
+    games: {
+        name: string;
+        rating: number;
+    }[];
+    users: {
+        name: string;
+        rating: number;
+    }[];
+};
 
-interface ChessInterface extends GameInterface {
-    rules: string;
-    numberOfPieces: number;
-}
+const personGames: GameStore["games"] = [
+    {
+        name: "Chess",
+        rating: 100,
+    },
+    {
+        name: "Checkers",
+        rating: 80,
+    },
+];
 
-class Chess implements ChessInterface {
-    constructor(
-        public name: string,
-        public rules: string,
-        public numberOfPieces: number = 6
-    ) {
-        this.name = name;
-        this.rules = rules;
-        this.numberOfPieces = numberOfPieces;
-    }
-
-    playGame() {
-        console.log(`Playing ${this.name}`);
-        return this;
-    }
-
-    exitGame() {
-        console.log(`Exiting ${this.name}`);
-    }
-
-    getNumberOfPieces() {
-        console.log(this.numberOfPieces);
-        return this;
-    }
-}
-
-const chessBoard = new Chess("Chess", "The rules of chess");
-
-chessBoard.playGame().getNumberOfPieces().exitGame();
+let personProperties: GameStore["users" | "games"];
