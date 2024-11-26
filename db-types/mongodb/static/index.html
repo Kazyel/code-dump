@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="search" id="search" />
+    <button id="search-btn">Search</button>
+
+    <pre>
+        <code id="code"></code>
+    </pre>
+
+
+    <script>
+        const searchBtn = document.getElementById('search-btn');
+        const codeElement = document.getElementById('code');
+        const searchElement = document.getElementById('search');
+
+        searchBtn.addEventListener('click', async () => {
+            codeElement.innerText = "Loading...";
+
+            const res = await fetch('/get?search=' + encodeURIComponent(searchElement.value));
+
+            const json = await res.json();
+
+            codeElement.innerText = "\n" + JSON.stringify(json, null, 4)
+        })
+
+    </script>
+</body>
+
+</html>
