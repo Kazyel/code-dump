@@ -30,12 +30,15 @@ class BinarySearchTree {
   }
 
   insert(data) {
+    // If tree is empty, insert the first node
     if (!this.root) {
       this.root = new Node(data);
       return this;
     }
 
+    // Traverse the tree and insert the node
     let currentNode = this.root;
+
     while (true) {
       if (data < currentNode.element) {
         if (!currentNode.left) {
@@ -58,6 +61,8 @@ class BinarySearchTree {
 
   search(data) {
     let currentNode = this.root;
+
+    // While the current node is not null
     while (currentNode) {
       if (data === currentNode.element) {
         return true;
@@ -69,6 +74,7 @@ class BinarySearchTree {
       }
       currentNode = currentNode.right;
     }
+
     return false;
   }
 
@@ -102,4 +108,4 @@ class BinarySearchTree {
 
 const tree = new BinarySearchTree();
 
-tree.insert(1).insert(2).insert(3).insert(4).insert(5).toObject();
+tree.insert(1).insert(2).insert(3).insert(4).insert(5).insert(3).toObject();
