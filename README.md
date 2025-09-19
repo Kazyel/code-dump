@@ -1,4 +1,4 @@
-# 🧠 Knowledge dump
+# 🧠 Code Dump
 
 > *"An organized chaos of learning, this is my sandbox.  
 > Snippets today, skills tomorrow."*
