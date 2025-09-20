@@ -70,7 +70,7 @@ const selectionSort = (array: number[]): number[] => {
     for (let j = i + 1; j < array.length; j++) {
       if (array[j]! < array[smallest]!) {
         smallest = j;
-      }
+  	    }
     }
 
     // If the smallest is equal the current index, skip because it's already in place!
@@ -99,3 +99,9 @@ const selectionSort = (array: number[]): number[] => {
 
 // Uncomment this to see in action:
 // selectionSort([43, 1, 23, 4, 0, 15]);
+
+
+/**
+ *  Merge Sort 
+ * */
+
